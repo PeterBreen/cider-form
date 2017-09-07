@@ -5,7 +5,7 @@ import Form from "react-jsonschema-form";
 
 //define schema
 const schema = {
-  title: "Todo",
+  title: "Cider Rating Form",
   type: "object",
   required: ["title"],
   properties: {
