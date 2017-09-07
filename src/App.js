@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Form from "react-jsonschema-form";
 
+//define schema
 const schema = {
   title: "Todo",
   type: "object",
@@ -12,7 +13,7 @@ const schema = {
     done: {type: "boolean", title: "Done?", default: false}
   }
 };
-
+//log function
 const log = (type) => console.log.bind(console, type);
 
 class App extends Component {
