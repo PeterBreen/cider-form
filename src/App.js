@@ -3,17 +3,26 @@ import logo from './logo.svg';
 import './App.css';
 import Form from "react-jsonschema-form";
 
+const schema = {
+  title: "Todo",
+  type: "object",
+  required: ["title"],
+  properties: {
+    title: {type: "string", title: "Title", default: "A new task"},
+    done: {type: "boolean", title: "Done?", default: false}
+  }
+};
+
+const log = (type) => console.log.bind(console, type);
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Form schema={schema}
+              onChange={log("changed")}
+              onSubmit={log("submitted")}
+              onError={log("errors")} />
       </div>
     );
   }
