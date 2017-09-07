@@ -7,7 +7,7 @@ import Form from "react-jsonschema-form";
 const schema = {
   title: "Cider Rating Form",
   type: "object",
-  required: ["title"],
+  required: [],
   properties: {
     title: {type: "string", title: "Title", default: "A new task"},
     done: {type: "boolean", title: "Done?", default: false}
