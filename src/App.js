@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Form from "react-jsonschema-form";
 
@@ -33,6 +32,11 @@ const uiSchema = {
 //log function
 const log = (type) => console.log.bind(console, type);
 
+//submit function
+const appendData = function() {
+  console.log('appendData() called');
+}
+
 class App extends Component {
   render() {
     return (
@@ -40,8 +44,9 @@ class App extends Component {
         <Form schema={schema}
               uiSchema={uiSchema}
               onChange={log("changed")}
-              onSubmit={log("submitted")}
+              onSubmit={appendData}
               onError={log("errors")} />
+            <div id="results"></div>
       </div>
     );
   }
