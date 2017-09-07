@@ -9,7 +9,11 @@ const schema = {
   type: "object",
   required: [],
   properties: {
-    title: {type: "string", title: "Title", default: "A new task"},
+    brand: {type: "string", title: "Brand", default: ""},
+    cider: {type: "string", title: "Cider Name", default: ""},
+    rating: {},
+    notes: {},
+    taster: {},
     done: {type: "boolean", title: "Done?", default: false}
   }
 };
