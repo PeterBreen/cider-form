@@ -31,10 +31,11 @@ const uiSchema = {
 
 //log function
 const log = (type) => console.log.bind(console, type);
+const onSubmit = ({formData}) => appendDom(formData);
 
-//submit function
-const appendData = function() {
-  console.log('appendData() called');
+const appendDom = function(d) {
+  console.log('brand ' + d.brand);
+  console.log('rating ' + d.rating);
 }
 
 class App extends Component {
@@ -44,9 +45,8 @@ class App extends Component {
         <Form schema={schema}
               uiSchema={uiSchema}
               onChange={log("changed")}
-              onSubmit={appendData}
+              onSubmit={onSubmit}
               onError={log("errors")} />
-            <div id="results"></div>
       </div>
     );
   }
