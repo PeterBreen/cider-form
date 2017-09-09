@@ -33,9 +33,8 @@ const uiSchema = {
 const log = (type) => console.log.bind(console, type);
 const onSubmit = ({formData}) => appendDom(formData);
 
-const appendDom = function(d) {
-  console.log('brand: ' + d.brand);
-  console.log('rating: ' + d.rating);
+const appendDom = function(formData) {
+  console.log(formData);
 }
 
 class App extends Component {
