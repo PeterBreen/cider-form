@@ -34,6 +34,7 @@ const log = (type) => console.log.bind(console, type);
 const onSubmit = ({formData}) => appendDom(formData);
 
 const appendDom = function(formData) {
+  //take formData object and append to DOM (<div id="results"></div>)
   console.log(formData);
 }
 
