@@ -10,9 +10,9 @@ const schema = {
   properties: {
     brand: {type: "string", title: "Brand", default: ""},
     cider: {type: "string", title: "Cider Name", default: ""},
-    rating: {type: "number", title: "Rating", enum: [1, 2, 3], enumNames: ["one", "two", "three"]},
+    rating: {type: "string", title: "Rating", enum: ['1', '2', '3'], enumNames: ["one", "two", "three"], default: "1"},
     notes: {type: "string", title: "Tasting Notes", default: ""},
-    taster: {type: "string", title: "Taster", enum: ["Both", "Peter"]},
+    taster: {type: "string", title: "Taster", enum: ["Both", "Peter"], default: "Both"},
   }
 };
 
@@ -34,8 +34,9 @@ const log = (type) => console.log.bind(console, type);
 const onSubmit = ({formData}) => appendDom(formData);
 
 const appendDom = function(formData) {
-  //take formData object and append to DOM (<div id="results"></div>)
-  console.log(formData);
+  let stringData = JSON.stringify(formData, null, 4); // adds 4 spaces to pretty-print output
+
+  console.log(stringData);
 }
 
 class App extends Component {
@@ -44,7 +45,6 @@ class App extends Component {
       <div className="App">
         <Form schema={schema}
               uiSchema={uiSchema}
-              onChange={log("changed")}
               onSubmit={onSubmit}
               onError={log("errors")} />
       </div>
