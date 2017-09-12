@@ -19,6 +19,3 @@ textarea {
   width: 40rem;
   height: 6rem;
 }
-#results pre::after {
-  content: ",";
-}
