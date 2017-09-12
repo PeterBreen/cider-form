@@ -40,7 +40,7 @@ const appendDom = function(formData) {
   let outputdiv = document.createElement('div');
   let outputpre = document.createElement('pre');
   outputdiv.appendChild(outputpre);
-  let outputtext = document.createTextNode(stringData);
+  let outputtext = document.createTextNode(stringData + ',');
   outputpre.appendChild(outputtext);
   target.appendChild(outputdiv);
   // debug console.log
