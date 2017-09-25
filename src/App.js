@@ -34,7 +34,7 @@ const log = (type) => console.log.bind(console, type);
 const onSubmit = ({formData}) => appendDom(formData);
 
 const appendDom = function(formData) {
-  let stringData = JSON.stringify(formData, null, 4); // adds 4 spaces to pretty-print output
+  let stringData = JSON.stringify(formData, null, 2); // adds 2 spaces to pretty-print output
   //probably overcomplicated method of returning <div><pre> content </pre></div> and appending to dom
   let target = document.getElementById('results');
   let outputdiv = document.createElement('div');
